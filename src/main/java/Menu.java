@@ -25,13 +25,17 @@ public class Menu {
         player.createBoard(getSize());
         player.displayBoard();
 
-        player.insertX(2);
         player.insertX(1);
+        player.insertX(2);
         player.insertX(3);
         player.insertX(4);
+        player.insertX(5);
+        player.insertX(6);
+        player.insertX(7);
+        player.insertX(8);
+        player.insertX(9);
 
-        player.displayBoard();
-        ticGame.displayBoard();
+//        player.displayBoard();
     }
 
 

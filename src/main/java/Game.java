@@ -2,9 +2,17 @@ public class Game implements CreateGame{
 
     public boolean isWon;
     public int[][] board;
+    public int size;
+
+    public static final String RESET = "\033[0m";  // Text Reset
+    //colors
+    public static final String BLACK = "\033[0;30m";   // BLACK
+    public static final String RED = "\033[0;31m";     // RED
+    public static final String GREEN = "\033[0;32m";   // GREEN
 
     public Game(int size) {
         this.board = new int[size][size];
+        this.size = size;
     }
 
 
@@ -29,6 +37,15 @@ public class Game implements CreateGame{
 
     @Override
     public boolean isFull() {
+        int positionOnBoard=1;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (board[i][j] == 69){
+                    return true;
+                }
+                positionOnBoard+=1;
+            }
+        }
         return false;
     }
 
@@ -43,11 +60,12 @@ public class Game implements CreateGame{
 
             for (int i = 0; i < board.length; i++) {
                 for (int j = 0; j < board[i].length; j++) {
+
                     if (board[i][j] < 10 ) {
-                        System.out.print(board[i][j] + "  ");
+                      System.out.print(board[i][j] + "  ");
                     }
                     else{
-                        System.out.print(board[i][j] + " ");
+                       System.out.print(board[i][j] + " ");
                     }
                 }
                 System.out.println("");
